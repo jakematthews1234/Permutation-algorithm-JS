@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tech test</title>
+</head>
+<h1> Tech test </h1>
+
+<body>
+    <script>
+        /**
+* The following is the function where the solution shall be written
+*/
+
+        function solution(input) {
+
+            if (input.length < 2) return input; // Break condition
+
+            var permutations = []; // Creating the array to hold the permutations
+            for (var i = 0; i < input.length; i++) {
+                var char = input[i];
+
+                // Eliminating duplicates
+                if (input.indexOf(char) != i) // if char was used already
+                    continue; // skip it this time
+
+                var remainingInput = input.slice(0, i) + input.slice(i + 1, input.length); 
+
+                for (var subPermutation of input(remainingInput))
+                    permutations.push(char + subPermutation)
+            }
+        }
+
+        return permutations;
+            var myInput = "xyz";
+            permutations = input(myInput);
+            for (permutation of permutations)
+                print(permutation) 
+
+
+        // some example inputs
+        console.log(solution('326')); // expected ouput 632,623,362,326,263,236
+        console.log(solution('A 3B2 C6D')); // expected ouput 632,623,362,326,263,236
+    </Script>
+</body>
+
+</html>
