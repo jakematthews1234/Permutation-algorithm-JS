@@ -12,18 +12,18 @@
 <body>
     <script>
         function solution(input) {
-            var results = [];
+            var results = []; // array for permutation results
 
-  if (input.length === 1) {
+  if (input.length === 1) { // if statement referring to if the input length is just 1
     results.push(input);
     return results;
   }
   for (var i = 0; i < input.length; i++) {
-    var firstChar = input[i];
-    var charsLeft = input.substring(0, i) + input.substring(i + 1);
-    var innerPermutations = charsLeft;
-    for (var j = 0; j < innerPermutations.length; j++) {
-      results.push(firstChar + innerPermutations[j]);
+    var firstChar = input[i]; // define first number in the string as firstChar
+    var charsLeft = input.substring(0, i) + input.substring(i + 1); // define all other numbers in the string as charsLeft
+    var innerPermutations = charsLeft; //defining the remaining integers in the string
+    for (var j = 0; j < innerPermutations.length; j++) { 
+      results.push(firstChar + innerPermutations[j]); // add firstChar with innerPermutations to get all possible permutations
     }
   }
   return results;
